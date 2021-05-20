@@ -1,0 +1,7 @@
+﻿<Project>
+  <PropertyGroup>
+    <AssemblyName>Bing.Extensions.Npoi</AssemblyName>
+    <PackageId>Bing.Extensions.Npoi</PackageId>
+    <Description>Bing.Extensions.Npoi是Bing应用框架对NPOI组件的扩展封装。</Description>
+  </PropertyGroup>
+</Project>
