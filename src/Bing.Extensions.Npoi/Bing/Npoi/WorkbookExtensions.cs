@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using NPOI.SS.Formula;
@@ -111,5 +112,41 @@ public static partial class WorkbookExtensions
         if (workbook is null)
             throw new ArgumentNullException(nameof(workbook));
         return names.Select(workbook.GetSheet).FirstOrDefault(sheet => sheet != null);
+    }
+
+    /// <summary>
+    /// 获取工作簿中所有工作表的名称。
+    /// </summary>
+    /// <param name="workbook">要获取工作表名称的工作簿。</param>
+    /// <returns>工作簿中所有工作表的名称数组。</returns>
+    /// <exception cref="ArgumentNullException">如果工作簿为null，则抛出此异常。</exception>
+    public static string[] GetSheetNames(this IWorkbook workbook)
+    {
+        if (workbook is null)
+            throw new ArgumentNullException(nameof(workbook));
+        var result = new List<string>();
+        for (var i = 0; i < workbook.NumberOfSheets; i++)
+            result.Add(workbook.GetSheetName(i));
+        return result.ToArray();
+    }
+
+    /// <summary>
+    /// 获取工作簿中所有非隐藏的工作表。
+    /// </summary>
+    /// <param name="workbook">要获取工作表的工作簿。</param>
+    /// <returns>工作簿中所有非隐藏的工作表的集合。</returns>
+    /// <exception cref="ArgumentNullException">如果工作簿为null，则抛出此异常。</exception>
+    public static IEnumerable<ISheet> GetSheets(this IWorkbook workbook)
+    {
+        if (workbook is null)
+            throw new ArgumentNullException(nameof(workbook));
+        var result = new List<ISheet>();
+        for (var i = 0; i < workbook.NumberOfSheets; i++)
+        {
+            var sheet = workbook.GetSheetAt(i);
+            if (sheet != null && !workbook.IsSheetHidden(i))
+                result.Add(sheet);
+        }
+        return result;
     }
 }
