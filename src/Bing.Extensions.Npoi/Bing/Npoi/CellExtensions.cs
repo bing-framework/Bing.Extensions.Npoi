@@ -1,5 +1,6 @@
 ﻿using System.Globalization;
 using System;
+using NPOI.SS.Formula.Eval;
 using NPOI.SS.UserModel;
 
 namespace Bing.Npoi;
@@ -25,8 +26,8 @@ public static partial class CellExtensions
             {
                 CellType.String => cell.StringCellValue,
                 CellType.Boolean => cell.BooleanCellValue.ToString(),
-                CellType.Error => cell.ErrorCellValue.ToString(),
-                CellType.Formula => cell.CellFormula,
+                CellType.Error => ErrorEval.GetText(cell.ErrorCellValue),
+                CellType.Formula => GetFormulaValue(cell),
                 CellType.Numeric => GetNumericCellValue(cell),
                 _ => cell.ToString(),
             };
@@ -54,5 +55,31 @@ public static partial class CellExtensions
             return date.ToString("yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture);
         }
         return cell.NumericCellValue.ToString(CultureInfo.InvariantCulture);
+    }
+
+    /// <summary>
+    /// 获取公式单元格的计算结果值。
+    /// </summary>
+    /// <param name="cell">要获取值的单元格。</param>
+    /// <returns>公式单元格的计算结果值。返回值类型根据公式的计算结果类型而定。如果单元格不是公式类型，或者公式尚未计算，返回空字符串。</returns>
+    private static string GetFormulaValue(ICell cell)
+    {
+        var value = string.Empty;
+        switch (cell.CachedFormulaResultType)
+        {
+            case CellType.String:
+                var strFormula = cell.StringCellValue;
+                if (!string.IsNullOrEmpty(strFormula))
+                    value = strFormula;
+                return value;
+            case CellType.Numeric:
+                return GetNumericCellValue(cell);
+            case CellType.Boolean:
+                return Convert.ToString(cell.BooleanCellValue);
+            case CellType.Error:
+                return ErrorEval.GetText(cell.ErrorCellValue);
+            default:
+                return string.Empty;
+        }
     }
 }
