@@ -40,10 +40,11 @@ public static partial class RowExtensions
     }
 
     /// <summary>
-    /// 清空内容
+    /// 清除行中所有单元格的内容。
     /// </summary>
-    /// <param name="row">NPOI单元行</param>
-    /// <exception cref="ArgumentNullException"></exception>
+    /// <param name="row">要清除内容的行。</param>
+    /// <returns>清除内容后的行。</returns>
+    /// <exception cref="ArgumentNullException">如果行对象为null，则抛出此异常。</exception>
     public static IRow ClearContent(this IRow row)
     {
         if (row is null)

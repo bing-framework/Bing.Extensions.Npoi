@@ -1,0 +1,290 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Bing.Extensions.Npoi</name>
+    </assembly>
+    <members>
+        <member name="T:Bing.Npoi.CellStyleExtensions">
+            <summary>
+            单元格样式(<see cref="T:NPOI.SS.UserModel.ICellStyle"/>) 扩展
+            </summary>
+        </member>
+        <member name="M:Bing.Npoi.CellStyleExtensions.SetDataFormat(NPOI.SS.UserModel.ICellStyle,System.Int16)">
+            <summary>
+            设置数据格式
+            </summary>
+            <param name="cellStyle">单元格样式</param>
+            <param name="dataFormat">数据格式</param>
+        </member>
+        <member name="M:Bing.Npoi.CellStyleExtensions.SetHorizontalAlignment(NPOI.SS.UserModel.ICellStyle,NPOI.SS.UserModel.HorizontalAlignment)">
+            <summary>
+            设置水平对齐
+            </summary>
+            <param name="cellStyle">单元格样式</param>
+            <param name="horizontalAlignment">水平对齐</param>
+        </member>
+        <member name="M:Bing.Npoi.CellStyleExtensions.SetVerticalAlignment(NPOI.SS.UserModel.ICellStyle,NPOI.SS.UserModel.VerticalAlignment)">
+            <summary>
+            设置垂直对齐
+            </summary>
+            <param name="cellStyle">单元格样式</param>
+            <param name="verticalAlignment">垂直对齐</param>
+        </member>
+        <member name="M:Bing.Npoi.CellStyleExtensions.SetFillForegroundColor(NPOI.SS.UserModel.ICellStyle,System.Int16)">
+            <summary>
+            设置填充前景颜色
+            </summary>
+            <param name="cellStyle">单元格样式</param>
+            <param name="fillForegroundColor">填充前景颜色</param>
+        </member>
+        <member name="M:Bing.Npoi.CellStyleExtensions.SetFillBackgroundColor(NPOI.SS.UserModel.ICellStyle,System.Int16)">
+            <summary>
+            设置填充背景颜色
+            </summary>
+            <param name="cellStyle">单元格样式</param>
+            <param name="backgroundColor">填充背景颜色</param>
+        </member>
+        <member name="M:Bing.Npoi.CellStyleExtensions.SetFillPattern(NPOI.SS.UserModel.ICellStyle,NPOI.SS.UserModel.FillPattern)">
+            <summary>
+            设置填充模式
+            </summary>
+            <param name="cellStyle">单元格样式</param>
+            <param name="fillPattern">填充图案</param>
+        </member>
+        <member name="M:Bing.Npoi.CellStyleExtensions.SetBorderTop(NPOI.SS.UserModel.ICellStyle,NPOI.SS.UserModel.BorderStyle)">
+            <summary>
+            设置上边框样式
+            </summary>
+            <param name="cellStyle">单元格样式</param>
+            <param name="borderStyle">边框样式</param>
+        </member>
+        <member name="M:Bing.Npoi.CellStyleExtensions.SetBorderRight(NPOI.SS.UserModel.ICellStyle,NPOI.SS.UserModel.BorderStyle)">
+            <summary>
+            设置右边框样式
+            </summary>
+            <param name="cellStyle">单元格样式</param>
+            <param name="borderStyle">边框样式</param>
+        </member>
+        <member name="M:Bing.Npoi.CellStyleExtensions.SetBorderBottom(NPOI.SS.UserModel.ICellStyle,NPOI.SS.UserModel.BorderStyle)">
+            <summary>
+            设置下边框样式
+            </summary>
+            <param name="cellStyle">单元格样式</param>
+            <param name="borderStyle">边框样式</param>
+        </member>
+        <member name="M:Bing.Npoi.CellStyleExtensions.SetBorderLeft(NPOI.SS.UserModel.ICellStyle,NPOI.SS.UserModel.BorderStyle)">
+            <summary>
+            设置左边框样式
+            </summary>
+            <param name="cellStyle">单元格样式</param>
+            <param name="borderStyle">边框样式</param>
+        </member>
+        <member name="M:Bing.Npoi.CellStyleExtensions.SetBorder(NPOI.SS.UserModel.ICellStyle,NPOI.SS.UserModel.BorderStyle)">
+            <summary>
+            设置边框样式
+            </summary>
+            <param name="cellStyle">单元格样式</param>
+            <param name="borderStyle">边框样式</param>
+        </member>
+        <member name="M:Bing.Npoi.CellStyleExtensions.SetBorderTopColor(NPOI.SS.UserModel.ICellStyle,System.Int16)">
+            <summary>
+            设置上边框颜色
+            </summary>
+            <param name="cellStyle">单元格样式</param>
+            <param name="borderColor">边框颜色</param>
+        </member>
+        <member name="M:Bing.Npoi.CellStyleExtensions.SetBorderRightColor(NPOI.SS.UserModel.ICellStyle,System.Int16)">
+            <summary>
+            设置右边框颜色
+            </summary>
+            <param name="cellStyle">单元格样式</param>
+            <param name="borderColor">边框颜色</param>
+        </member>
+        <member name="M:Bing.Npoi.CellStyleExtensions.SetBorderBottomColor(NPOI.SS.UserModel.ICellStyle,System.Int16)">
+            <summary>
+            设置下边框颜色
+            </summary>
+            <param name="cellStyle">单元格样式</param>
+            <param name="borderColor">边框颜色</param>
+        </member>
+        <member name="M:Bing.Npoi.CellStyleExtensions.SetBorderLeftColor(NPOI.SS.UserModel.ICellStyle,System.Int16)">
+            <summary>
+            设置左边框颜色
+            </summary>
+            <param name="cellStyle">单元格样式</param>
+            <param name="borderColor">边框颜色</param>
+        </member>
+        <member name="M:Bing.Npoi.CellStyleExtensions.SetBorderColor(NPOI.SS.UserModel.ICellStyle,System.Int16)">
+            <summary>
+            设置边框颜色
+            </summary>
+            <param name="cellStyle">单元格样式</param>
+            <param name="borderColor">边框颜色</param>
+        </member>
+        <member name="M:Bing.Npoi.CellStyleExtensions.SetFont(NPOI.SS.UserModel.ICellStyle,NPOI.SS.UserModel.IWorkbook,System.Action{NPOI.SS.UserModel.IFont})">
+            <summary>
+            设置字体
+            </summary>
+            <param name="cellStyle">单元格样式</param>
+            <param name="workbook">工作簿</param>
+            <param name="action">字体</param>
+        </member>
+        <member name="T:Bing.Npoi.FontExtensions">
+            <summary>
+            字体(<see cref="T:NPOI.SS.UserModel.IFont"/>) 扩展
+            </summary>
+        </member>
+        <member name="M:Bing.Npoi.FontExtensions.SetFontHeightInPoints(NPOI.SS.UserModel.IFont,System.Int16)">
+            <summary>
+            设置字体大小
+            </summary>
+            <param name="font">字体</param>
+            <param name="fontSize">字体大小</param>
+        </member>
+        <member name="M:Bing.Npoi.FontExtensions.SetColor(NPOI.SS.UserModel.IFont,System.Int16)">
+            <summary>
+            设置字体颜色
+            </summary>
+            <param name="font">字体</param>
+            <param name="color">颜色</param>
+        </member>
+        <member name="M:Bing.Npoi.FontExtensions.SetBold(NPOI.SS.UserModel.IFont,System.Boolean)">
+            <summary>
+            设置粗体
+            </summary>
+            <param name="font">字体</param>
+            <param name="isBold">粗体大小</param>
+        </member>
+        <member name="M:Bing.Npoi.FontExtensions.DefaultFont(NPOI.SS.UserModel.IFont)">
+            <summary>
+            默认字体
+            </summary>
+            <param name="font">字体</param>
+        </member>
+        <member name="T:Bing.Npoi.RowExtensions">
+            <summary>
+            NPOI单元行(<see cref="T:NPOI.SS.UserModel.IRow"/>) 扩展
+            </summary>
+        </member>
+        <member name="M:Bing.Npoi.RowExtensions.GetOrCreateCell(NPOI.SS.UserModel.IRow,System.Int32)">
+            <summary>
+            获取或创建指定位置的单元格。
+            </summary>
+            <param name="row">行对象。</param>
+            <param name="col">列号，从0开始。</param>
+            <returns>指定位置的单元格。</returns>
+            <exception cref="T:System.ArgumentNullException">如果行对象为null，则抛出此异常。</exception>
+        </member>
+        <member name="M:Bing.Npoi.RowExtensions.CreateCell(NPOI.SS.UserModel.IRow,System.Int32,System.Action{NPOI.SS.UserModel.ICell})">
+            <summary>
+            在指定的行中创建单元格，并执行设置操作。
+            </summary>
+            <param name="row">要创建单元格的行。</param>
+            <param name="col">单元格的列号，从0开始。</param>
+            <param name="setupAct">对新创建的单元格执行的设置操作。</param>
+            <returns>创建单元格的行。</returns>
+            <exception cref="T:System.ArgumentNullException">如果行对象为null，则抛出此异常。</exception>
+        </member>
+        <member name="M:Bing.Npoi.RowExtensions.ClearContent(NPOI.SS.UserModel.IRow)">
+            <summary>
+            清除行中所有单元格的内容。
+            </summary>
+            <param name="row">要清除内容的行。</param>
+            <returns>清除内容后的行。</returns>
+            <exception cref="T:System.ArgumentNullException">如果行对象为null，则抛出此异常。</exception>
+        </member>
+        <member name="T:Bing.Npoi.SheetExtensions">
+            <summary>
+            工作表(<see cref="T:NPOI.SS.UserModel.ISheet"/>) 扩展
+            </summary>
+        </member>
+        <member name="M:Bing.Npoi.SheetExtensions.Cell(NPOI.SS.UserModel.ISheet,System.Int32,System.Int32)">
+            <summary>
+            获取或创建指定位置的单元格。
+            </summary>
+            <param name="sheet">工作表对象。</param>
+            <param name="row">行号，从1开始。</param>
+            <param name="col">列号，从1开始。</param>
+            <returns>指定位置的单元格。</returns>
+        </member>
+        <member name="M:Bing.Npoi.SheetExtensions.Get(NPOI.SS.UserModel.ISheet,System.Int32,System.Int32)">
+            <summary>
+            获取指定位置单元格的值。
+            </summary>
+            <param name="sheet">工作表对象。</param>
+            <param name="row">行号，从1开始。</param>
+            <param name="col">列号，从1开始。</param>
+            <returns>指定位置单元格的值，返回类型为动态类型。</returns>
+        </member>
+        <member name="T:Bing.Npoi.WorkbookExtensions">
+            <summary>
+            NPOI工作簿(<see cref="T:NPOI.SS.UserModel.IWorkbook"/>) 扩展
+            </summary>
+        </member>
+        <member name="M:Bing.Npoi.WorkbookExtensions.ToBytes(NPOI.SS.UserModel.IWorkbook,System.Boolean)">
+            <summary>
+            将工作簿转换为字节数组。
+            </summary>
+            <param name="workbook">要转换的工作簿。</param>
+            <param name="leaveOpen">是否保持工作簿打开状态，默认为false。</param>
+            <returns>表示工作簿的字节数组。</returns>
+            <exception cref="T:System.ArgumentNullException">如果工作簿为null，则抛出此异常。</exception>
+        </member>
+        <member name="M:Bing.Npoi.WorkbookExtensions.ToFile(NPOI.SS.UserModel.IWorkbook,System.String,System.Boolean)">
+            <summary>
+            将工作簿写入指定的文件中。
+            </summary>
+            <param name="workbook">要写入的工作簿。</param>
+            <param name="fileName">目标文件名。</param>
+            <param name="leaveOpen">是否保持工作簿打开状态，默认为false。</param>
+            <exception cref="T:System.ArgumentNullException">如果工作簿为null，则抛出此异常。</exception>
+        </member>
+        <member name="M:Bing.Npoi.WorkbookExtensions.EvaluateAllFormulaCells(NPOI.SS.UserModel.IWorkbook)">
+            <summary>
+            计算工作簿中所有公式单元格的值。
+            </summary>
+            <param name="workbook">要计算的工作簿。</param>
+            <exception cref="T:System.ArgumentNullException">如果工作簿为null，则抛出此异常。</exception>
+        </member>
+        <member name="M:Bing.Npoi.WorkbookExtensions.EvaluateAllFormulaCellsIgnoreError(NPOI.SS.UserModel.IWorkbook)">
+            <summary>
+            计算工作簿中所有公式单元格的值，忽略任何错误。
+            </summary>
+            <param name="workbook">要计算的工作簿。</param>
+            <exception cref="T:System.ArgumentNullException">如果工作簿为null，则抛出此异常。</exception>
+        </member>
+        <member name="M:Bing.Npoi.WorkbookExtensions.CreateFormulaEvaluator(NPOI.SS.UserModel.IWorkbook)">
+            <summary>
+            创建一个公式求值器，用于计算工作簿中的公式单元格。
+            </summary>
+            <param name="workbook">要创建公式求值器的工作簿。</param>
+            <returns>创建的公式求值器。</returns>
+            <exception cref="T:System.ArgumentNullException">如果工作簿为null，则抛出此异常。</exception>
+        </member>
+        <member name="M:Bing.Npoi.WorkbookExtensions.GetSheet(NPOI.SS.UserModel.IWorkbook,System.String[])">
+            <summary>
+            从工作簿中获取第一个存在的工作表。
+            </summary>
+            <param name="workbook">要获取工作表的工作簿。</param>
+            <param name="names">工作表名称列表，按照顺序查找，返回第一个存在的工作表。</param>
+            <returns>找到的第一个工作表，如果没有找到则返回null。</returns>
+            <exception cref="T:System.ArgumentNullException">如果工作簿为null，则抛出此异常。</exception>
+        </member>
+        <member name="M:Bing.Npoi.WorkbookExtensions.GetSheetNames(NPOI.SS.UserModel.IWorkbook)">
+            <summary>
+            获取工作簿中所有工作表的名称。
+            </summary>
+            <param name="workbook">要获取工作表名称的工作簿。</param>
+            <returns>工作簿中所有工作表的名称数组。</returns>
+            <exception cref="T:System.ArgumentNullException">如果工作簿为null，则抛出此异常。</exception>
+        </member>
+        <member name="M:Bing.Npoi.WorkbookExtensions.GetSheets(NPOI.SS.UserModel.IWorkbook)">
+            <summary>
+            获取工作簿中所有非隐藏的工作表。
+            </summary>
+            <param name="workbook">要获取工作表的工作簿。</param>
+            <returns>工作簿中所有非隐藏的工作表的集合。</returns>
+            <exception cref="T:System.ArgumentNullException">如果工作簿为null，则抛出此异常。</exception>
+        </member>
+    </members>
+</doc>
