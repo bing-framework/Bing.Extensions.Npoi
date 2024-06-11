@@ -4,6 +4,32 @@
         <name>Bing.Extensions.Npoi</name>
     </assembly>
     <members>
+        <member name="T:Bing.Npoi.CellExtensions">
+            <summary>
+            NPOI单元格(<see cref="T:NPOI.SS.UserModel.ICell"/>) 扩展
+            </summary>
+        </member>
+        <member name="M:Bing.Npoi.CellExtensions.GetStringValue(NPOI.SS.UserModel.ICell)">
+            <summary>
+            获取单元格的字符串值。
+            </summary>
+            <param name="cell">要获取值的单元格。</param>
+            <returns>单元格的字符串值。如果单元格为null，返回空字符串。</returns>
+        </member>
+        <member name="M:Bing.Npoi.CellExtensions.GetNumericCellValue(NPOI.SS.UserModel.ICell)">
+            <summary>
+            获取数值类型单元格的值。如果单元格是日期格式，则返回日期字符串，否则返回数值字符串。
+            </summary>
+            <param name="cell">要获取值的单元格。</param>
+            <returns>单元格的值。如果单元格是日期格式，则返回日期字符串，否则返回数值字符串。</returns>
+        </member>
+        <member name="M:Bing.Npoi.CellExtensions.GetFormulaValue(NPOI.SS.UserModel.ICell)">
+            <summary>
+            获取公式单元格的计算结果值。
+            </summary>
+            <param name="cell">要获取值的单元格。</param>
+            <returns>公式单元格的计算结果值。返回值类型根据公式的计算结果类型而定。如果单元格不是公式类型，或者公式尚未计算，返回空字符串。</returns>
+        </member>
         <member name="T:Bing.Npoi.CellStyleExtensions">
             <summary>
             单元格样式(<see cref="T:NPOI.SS.UserModel.ICellStyle"/>) 扩展
@@ -198,23 +224,68 @@
             工作表(<see cref="T:NPOI.SS.UserModel.ISheet"/>) 扩展
             </summary>
         </member>
-        <member name="M:Bing.Npoi.SheetExtensions.Cell(NPOI.SS.UserModel.ISheet,System.Int32,System.Int32)">
+        <member name="M:Bing.Npoi.SheetExtensions.GetOrCreateCell(NPOI.SS.UserModel.ISheet,System.Int32,System.Int32)">
             <summary>
             获取或创建指定位置的单元格。
             </summary>
             <param name="sheet">工作表对象。</param>
-            <param name="row">行号，从1开始。</param>
-            <param name="col">列号，从1开始。</param>
+            <param name="row">行号，从0开始。</param>
+            <param name="col">列号，从0开始。</param>
             <returns>指定位置的单元格。</returns>
+        </member>
+        <member name="M:Bing.Npoi.SheetExtensions.GetStringValue(NPOI.SS.UserModel.ISheet,System.Int32,System.Int32)">
+            <summary>
+            获取指定位置单元格的字符串值。
+            </summary>
+            <param name="sheet">要获取值的工作表。</param>
+            <param name="row">单元格所在的行号，从0开始。</param>
+            <param name="col">单元格所在的列号，从0开始。</param>
+            <returns>指定位置单元格的字符串值。如果单元格不存在，将创建一个新的单元格并返回其值。</returns>
+            <exception cref="T:System.ArgumentNullException">如果工作表为null，则抛出此异常。</exception>
+        </member>
+        <member name="M:Bing.Npoi.SheetExtensions.InsertRow(NPOI.SS.UserModel.ISheet,System.Int32)">
+            <summary>
+            在指定的行索引位置插入一行新行。
+            </summary>
+            <param name="sheet">要插入新行的工作表。</param>
+            <param name="rowIndex">新行的行索引。</param>
+            <returns>插入的新行。</returns>
+            <exception cref="T:System.ArgumentNullException">如果工作表为null，则抛出此异常。</exception>
+        </member>
+        <member name="M:Bing.Npoi.SheetExtensions.InsertRows(NPOI.SS.UserModel.ISheet,System.Int32,System.Int32)">
+            <summary>
+            在指定的行索引位置插入指定数量的新行。
+            </summary>
+            <param name="sheet">要插入新行的工作表。</param>
+            <param name="rowIndex">新行的起始行索引。</param>
+            <param name="rowsCount">要插入的新行的数量。</param>
+            <returns>插入的新行数组。</returns>
+            <exception cref="T:System.ArgumentNullException">如果工作表为null，则抛出此异常。</exception>
         </member>
         <member name="M:Bing.Npoi.SheetExtensions.Get(NPOI.SS.UserModel.ISheet,System.Int32,System.Int32)">
             <summary>
             获取指定位置单元格的值。
             </summary>
-            <param name="sheet">工作表对象。</param>
-            <param name="row">行号，从1开始。</param>
-            <param name="col">列号，从1开始。</param>
-            <returns>指定位置单元格的值，返回类型为动态类型。</returns>
+            <param name="sheet">要获取值的工作表。</param>
+            <param name="row">单元格所在的行号，从0开始。</param>
+            <param name="col">单元格所在的列号，从0开始。</param>
+            <returns>指定位置单元格的值。返回值类型根据单元格的类型而定。如果单元格不存在，将创建一个新的单元格并返回其值。</returns>
+            <exception cref="T:System.ArgumentNullException">如果工作表为null，则抛出此异常。</exception>
+        </member>
+        <member name="M:Bing.Npoi.SheetExtensions.IsInternalOrIntersect(System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            检查目标范围是否在指定范围内部或与其相交。
+            </summary>
+            <param name="rangeMinRow">指定范围的最小行索引。</param>
+            <param name="rangeMaxRow">指定范围的最大行索引。</param>
+            <param name="rangeMinCol">指定范围的最小列索引。</param>
+            <param name="rangeMaxCol">指定范围的最大列索引。</param>
+            <param name="targetMinRow">目标范围的最小行索引。</param>
+            <param name="targetMaxRow">目标范围的最大行索引。</param>
+            <param name="targetMinCol">目标范围的最小列索引。</param>
+            <param name="targetMaxCol">目标范围的最大列索引。</param>
+            <param name="onlyInternal">如果为true，只检查目标范围是否在指定范围内部；如果为false，检查目标范围是否在指定范围内部或与其相交。</param>
+            <returns>如果目标范围在指定范围内部或与其相交，返回true；否则返回false。</returns>
         </member>
         <member name="T:Bing.Npoi.WorkbookExtensions">
             <summary>
